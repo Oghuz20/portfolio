@@ -1,0 +1,51 @@
+---
+title: "Landslide Detection Using Deep Learning"
+description: "Semantic segmentation model for detecting landslides from satellite imagery."
+date: "2025-02-01"
+image: "/images/projects/landslide.png"
+tags: ["Deep Learning", "Computer Vision", "Semantic Segmentation"]
+---
+
+## Overview
+
+This project focuses on detecting landslides from satellite imagery using deep learning-based semantic segmentation.
+
+Due to extreme class imbalance (landslide pixels ≈ 1.9%), the primary evaluation metrics were F1-score and Recall instead of overall Accuracy.
+
+---
+
+## Model Architecture
+
+- UNet++ with EfficientNet-b5 encoder
+- Binary segmentation (landslide vs non-landslide)
+- Data preprocessing and augmentation applied
+- Loss function adjusted for class imbalance
+
+---
+
+## Results
+
+- Accuracy: 0.98+
+- High Recall for minority landslide class
+- Improved F1-score compared to baseline UNet
+
+---
+
+## Technologies Used
+
+- Python
+- TensorFlow / Keras
+- NumPy & Pandas
+- Matplotlib
+- Satellite image datasets
+
+---
+
+## What I Learned
+
+This project improved my understanding of:
+
+- Handling imbalanced datasets
+- Semantic segmentation evaluation metrics
+- Model optimization strategies
+- Real-world AI application in environmental monitoring

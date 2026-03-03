@@ -10,19 +10,20 @@ import {
 } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
+
 const person: Person = {
-  firstName: "Hasanali",
-  lastName: "Asadov",
-  name: `Hasanali Asadov`,
-  role: "Full-stack Developer",
-  avatar: "/images/roma.jpeg",
-  email: "hasanaliasadov@gmail.com",
+  firstName: "Oghuz",
+  lastName: "Hasanli",
+  name: `Oghuz Hasanli`,
+  role: "AI & Machine Learning Engineer",
+  avatar: "/images/oghuz.jpg",
+  email: "oguzhsnli2@gmail.com",
   location: "Asia/Baku", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Turkish"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English (Intermediate)", "Azerbaijani (Proficiency)", "Turkish (Proficiency)"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -31,26 +32,20 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/hasanasadd",
+    link: "https://github.com/Oghuz20",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/hasanaliasadov",
+    link: "https://www.linkedin.com/in/oghuzhasanli",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/hasanasadd/",
+    link: "https://www.instagram.com/_o_hasanli/",
     essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@hasanasadd",
-    essential: true,
   },
   {
     name: "Email",
@@ -62,11 +57,11 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/roma.jpeg",
+  image: "/images/oghuz.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building intelligent systems with AI & Machine Learning</>,
   featured: {
     display: true,
     title: (
@@ -78,16 +73,14 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "https://asadov.site",
+    href: "/work",
   },
   subline: (
     <>
-      I'm Hasanali, a design engineer at{" "}
-      <Text as="span" size="xl" weight="strong">
-        Code Academy
-      </Text>
-      , where I craft intuitive <br /> user experiences. After hours, I build my
-      own projects.
+      I'm Oghuz, AI & Machine Learning Engineer based in Baku.
+      I focus on computer vision, predictive modeling, and AI-driven systems.
+      My work combines automation engineering fundamentals with modern data science tools
+      to build intelligent, real-world solutions.
     </>
   ),
 };
@@ -112,13 +105,18 @@ const about: About = {
     display: true,
     title: "Introduction",
     description: (
-      <>
-        Hasanali is a passionate Full-stack Developer with a knack for creating
-        efficient and scalable web applications. With a strong foundation in both
-        front-end and back-end technologies, he excels at bridging the gap
-        between design and functionality. When he's not coding, Hasanali enjoys
-        exploring new technologies and contributing to open-source projects.
-      </>
+    <>
+      Oghuz Hasanli is a motivated and self-driven aspiring Data Scientist
+      with hands-on experience in machine learning, data analysis, and
+      model development. He completed a Data Science Internship at QSS Analytics,
+      where he worked on data cleaning, feature engineering, and building ML models
+      using Python and SQL.
+      <br /><br />
+      In addition, he served as a Python Mentor at Data Science Academy,
+      guiding beginner-level students and strengthening his communication
+      and analytical skills. His primary interests include computer vision,
+      deep learning, and applying AI to real-world challenges.
+    </>
     ),
   },
   work: {
@@ -131,12 +129,12 @@ const about: About = {
         role: "Process Automation Engineer",
         achievements: [
           <>
-            Implemented automation solutions that reduced manual processing time
-            by 30%, enhancing overall operational efficiency.
+            Studying automation systems, control theory, and industrial processes,
+            building a strong engineering foundation for intelligent system design.
           </>,
           <>
-            Collaborated with cross-functional teams to design and deploy a new
-            data management system, improving data accuracy by 25%.
+            Applying analytical thinking and problem-solving skills to both
+            engineering and machine learning projects.
           </>,
         ],
         images: [
@@ -149,22 +147,38 @@ const about: About = {
         ],
       },
       {
-        company: "SOCAR ITRI",
-        timeframe: "2024 - 2024",
-        role: "Frontend Developer Intern",
+        company: "QSS Analytics",
+        timeframe: "May 2025 – August 2025",
+        role: "Data Science Intern",
         achievements: [
           <>
-            Developed and maintained user-friendly web interfaces using React,
-            enhancing user experience and engagement.
+            Worked on real-world datasets performing data cleaning,
+            preprocessing, and feature engineering.
           </>,
           <>
-            Worked closely with designers to implement responsive design
-            principles, ensuring optimal performance across various devices.
+            Built and evaluated machine learning models using Python and SQL,
+            improving practical understanding of model performance metrics.
           </>,
         ],
         images: [],
       },
-    ],
+      {
+        company: "Data Science Academy",
+        timeframe: "June 2025 – August 2025",
+        role: "Python Mentor",
+        achievements: [
+          <>
+            Mentored beginner-level students in Python programming,
+            helping them understand coding logic and debugging techniques.
+          </>,
+          <>
+            Reviewed assignments and provided constructive feedback
+            to improve problem-solving and analytical skills.
+          </>,
+        ],
+        images: [],
+      },
+],
   },
   studies: {
     display: true, // set to false to hide this section
@@ -177,11 +191,12 @@ const about: About = {
         ),
       },
       {
-        name: "University of Ruse, Bulgaria, Erasmus+ Program",
+        name: "Code Next – Technest Scholarship Program",
         description: (
           <>
-            Studied Process Automation Engineering for one semester under the
-            Erasmus+ program.
+            Completed Data Science & Machine Learning Course focused on
+            Python programming, data preprocessing, ML algorithms,
+            and model evaluation through hands-on assignments.
           </>
         ),
       },
@@ -192,70 +207,50 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Landslide Detection – Satellite AI",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Deep learning-based semantic segmentation model for detecting
+            landslides from satellite imagery using UNet++ architecture.
+            Focused on handling class imbalance and improving F1-score performance.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Python", icon: "python" },
+          { name: "Deep Learning", icon: "tensorflow" },
+          { name: "Computer Vision", icon: "image" },
         ],
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js  + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/port.png",
-            alt: "Project image",
+            src: "/images/projects/landslide.png",
+            alt: "Landslide Detection Project",
             width: 24,
             height: 16,
           },
         ],
       },
       {
-        title: "LabVIEW",
-        description: <>Creating complex automation systems with LabVIEW.</>,
+        title: "Cats vs Dogs Classification",
+        description: (
+          <>
+            Convolutional Neural Network (CNN) model for binary image
+            classification between cats and dogs.
+            Implemented preprocessing, model training, and evaluation.
+          </>
+        ),
         tags: [
+          { name: "CNN", icon: "cpu" },
+          { name: "Image Classification", icon: "image" },
+          { name: "Machine Learning", icon: "python" },
+        ],
+        images: [
           {
-            name: "LabVIEW",
-            icon: "labview",
+            src: "/images/projects/test_example.png",
+            alt: "Cats vs Dogs Project",
+            width: 24,
+            height: 16,
           },
         ],
-        images: [],
       },
     ],
   },
@@ -264,7 +259,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about AI, Machine Learning & Engineering",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -275,7 +270,7 @@ const work: Work = {
   label: "Work",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
@@ -286,48 +281,7 @@ const gallery: Gallery = {
   description: `A photo collection by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
