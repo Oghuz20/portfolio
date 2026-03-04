@@ -15,16 +15,37 @@ function RepoCard({ repo }: { repo: GitHubRepo }) {
       rel="noreferrer"
       style={{
         display: "block",
-        padding: 16,
-        borderRadius: 14,
-        border: "1px solid rgba(255,255,255,0.12)",
+        padding: "20px",
+        borderRadius: "16px",
+        border: "1px solid rgba(255,255,255,0.08)",
+        background: "rgba(255,255,255,0.02)",
         textDecoration: "none",
+        transition: "all 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.18)";
+        e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+        e.currentTarget.style.transform = "translateY(-2px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.08)";
+        e.currentTarget.style.background = "rgba(255,255,255,0.02)";
+        e.currentTarget.style.transform = "translateY(0px)";
       }}
     >
-      <div style={{ fontWeight: 800, fontSize: 16 }}>{repo.name}</div>
+      <div style={{ fontWeight: 700, fontSize: 17 }}>
+        {repo.name}
+      </div>
 
       {repo.description && (
-        <div style={{ opacity: 0.82, marginTop: 8, lineHeight: 1.45 }}>
+        <div
+          style={{
+            opacity: 0.8,
+            marginTop: 10,
+            lineHeight: 1.5,
+            fontSize: 14,
+          }}
+        >
           {repo.description}
         </div>
       )}
@@ -32,17 +53,19 @@ function RepoCard({ repo }: { repo: GitHubRepo }) {
       <div
         style={{
           display: "flex",
-          gap: 12,
-          marginTop: 12,
-          opacity: 0.85,
+          gap: 14,
+          marginTop: 14,
+          opacity: 0.75,
           fontSize: 13,
           flexWrap: "wrap",
         }}
       >
-        {repo.language ? <span>{repo.language}</span> : null}
+        {repo.language && <span>{repo.language}</span>}
         <span>★ {repo.stargazers_count}</span>
         <span>⑂ {repo.forks_count}</span>
-        <span>Updated {new Date(repo.updated_at).toLocaleDateString()}</span>
+        <span>
+          Updated {new Date(repo.updated_at).toLocaleDateString()}
+        </span>
       </div>
     </a>
   );
@@ -81,9 +104,8 @@ export default async function GitHubRepoCards() {
         </div>
 
         {autoFiltered.length === 0 ? (
-          <div style={{ opacity: 0.75 }}>
-            To auto-add a repository here later, open that repo on GitHub and add the topic{" "}
-            <b>show-on-portfolio</b>.
+          <div style={{ opacity: 0.6 }}>
+            More projects coming soon.
           </div>
         ) : (
           <div style={{ display: "grid", gap: 12 }}>
