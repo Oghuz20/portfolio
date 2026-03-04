@@ -77,10 +77,10 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Oghuz, AI & Machine Learning Engineer based in Baku.
-      I focus on computer vision, predictive modeling, and AI-driven systems.
-      My work combines automation engineering fundamentals with modern data science tools
-      to build intelligent, real-world solutions.
+      I'm Oghuz, an AI & Machine Learning Engineer based in Baku.
+      I focus on computer vision, predictive modeling, and data-driven systems.
+      I enjoy building intelligent solutions using machine learning,
+      deep learning, and modern data science tools.
     </>
   ),
 };
