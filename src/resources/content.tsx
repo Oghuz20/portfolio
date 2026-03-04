@@ -77,10 +77,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Oghuz, an AI & Machine Learning Engineer based in Baku.
-      I focus on computer vision, predictive modeling, and data-driven systems.
-      I enjoy building intelligent solutions using machine learning,
-      deep learning, and modern data science tools.
+      I'm Oghuz, an AI & Machine Learning Engineer based in Baku,
+      passionate about building intelligent systems with deep learning,
+      computer vision, and data-driven technologies.
     </>
   ),
 };
