@@ -20,17 +20,6 @@ function RepoCard({ repo }: { repo: GitHubRepo }) {
         border: "1px solid rgba(255,255,255,0.08)",
         background: "rgba(255,255,255,0.02)",
         textDecoration: "none",
-        transition: "all 0.2s ease",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.18)";
-        e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-        e.currentTarget.style.transform = "translateY(-2px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.08)";
-        e.currentTarget.style.background = "rgba(255,255,255,0.02)";
-        e.currentTarget.style.transform = "translateY(0px)";
       }}
     >
       <div style={{ fontWeight: 700, fontSize: 17 }}>
