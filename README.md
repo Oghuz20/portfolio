@@ -5,8 +5,7 @@ This repository contains the source code for my personal portfolio website.
 The portfolio presents my projects, experience, and technical interests in artificial intelligence, machine learning, and computer vision.
 
 ## 🌐 Live Portfolio
-
-https://portfolio-oghuz20s-projects.vercel.app
+You can view the deployed portfolio here: https://oghuz20.vercel.app
 
 ## 🧠 Featured Projects
 
