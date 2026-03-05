@@ -34,25 +34,23 @@ export const Footer = () => {
         </Text>
 
         <Row gap="16">
-          {social.map(
-            (item) =>
-              item.link && (
-                <SmartLink
-                  key={item.name}
-                  href={item.link}
-                  // only open a new tab for normal external links
-                  target={item.link.startsWith("http") ? "_blank" : undefined}
-                  rel={item.link.startsWith("http") ? "noreferrer" : undefined}
-                >
-                  <IconButton
-                    icon={item.icon}
-                    tooltip={item.name}
-                    size="s"
-                    variant="ghost"
-                  />
-                </SmartLink>
-              )
-          )}
+          {social.map((item) => {
+            if (!item.link) return null;
+
+            if (item.link.startsWith("mailto:")) {
+              return (
+                <a key={item.name} href={item.link} style={{ display: "inline-flex" }}>
+                  <IconButton icon={item.icon} tooltip={item.name} size="s" variant="ghost" />
+                </a>
+              );
+            }
+
+            return (
+              <SmartLink key={item.name} href={item.link} target="_blank" rel="noreferrer">
+                <IconButton icon={item.icon} tooltip={item.name} size="s" variant="ghost" />
+              </SmartLink>
+            );
+          })}
         </Row>
       </Row>
 
