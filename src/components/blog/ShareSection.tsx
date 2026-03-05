@@ -109,9 +109,42 @@ export function ShareSection({ title, url }: ShareSectionProps) {
         Share this post:
       </Text>
       <Row data-border="rounded" gap="16" horizontal="center" wrap>
-        {enabledPlatforms.map((platform, index) => (
-          <Button key={index} variant="secondary" size="s" href={platform.generateUrl(title, url)} prefixIcon={platform.icon} />
-        ))}
+        {enabledPlatforms.map((platform, index) => {
+          if (platform.name === "email") {
+            return (
+              <Button
+                key={index}
+                variant="secondary"
+                size="s"
+                prefixIcon={platform.icon}
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(url);
+                    addToast({
+                      variant: "success",
+                      message: "Link copied. Paste it into your email.",
+                    });
+                  } catch (err) {
+                    addToast({
+                      variant: "danger",
+                      message: "Failed to copy link",
+                    });
+                  }
+                }}
+              />
+            );
+          }
+
+          return (
+            <Button
+              key={index}
+              variant="secondary"
+              size="s"
+              href={platform.generateUrl(title, url)}
+              prefixIcon={platform.icon}
+            />
+          );
+        })}
         
         {socialSharing.platforms.copyLink && (
           <Button
