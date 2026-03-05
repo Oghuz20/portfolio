@@ -1,0 +1,55 @@
+---
+title: Building a Handwritten Alphabet AI with TensorFlow.js
+description: Deploying a neural network in the browser to recognize handwritten letters using EMNIST and TensorFlow.js.
+image: /images/projects/alphabet-ai.png
+publishedAt: 2026-03-06
+tag: Machine Learning
+---
+
+## Introduction
+
+Deploying machine learning models directly in the browser is becoming increasingly practical thanks to **TensorFlow.js**.
+
+In this project, I built a handwritten alphabet recognition system that runs entirely on the client side.
+
+Users draw a character on a canvas, and the model predicts the corresponding letter in real time.
+
+---
+## Try the Application
+
+Live Demo:  
+https://alphabet-ai-mu.vercel.app/
+
+GitHub Repository:  
+https://github.com/Oghuz20/alphabet-ai
+
+## Dataset
+
+The model was trained on the **EMNIST ByClass dataset**, which contains handwritten characters from A–Z and a–z.
+
+Because the dataset produces **52 classes**, the application merges uppercase and lowercase probabilities to produce a **case-insensitive classifier with 26 outputs**.
+
+---
+
+## Real-World Challenge: Canvas vs Dataset
+
+User drawings differ significantly from the dataset images.
+
+To solve this, a preprocessing pipeline was implemented:
+
+- Center-of-mass alignment
+- Binarization
+- Rescaling to 28×28
+- Pixel inversion
+- Orientation correction
+
+These steps ensure that the input distribution matches the training data.
+
+---
+
+## Deployment
+
+The model runs entirely in the browser using **TensorFlow.js**, eliminating the need for a backend server.
+
+The application is deployed using **Vercel** and automatically updates whenever changes are pushed to GitHub.
+

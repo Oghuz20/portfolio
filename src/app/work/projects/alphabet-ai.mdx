@@ -1,0 +1,77 @@
+---
+title: Handwritten Alphabet Predictor (A–Z)
+description: Browser-based AI system that recognizes handwritten English letters using TensorFlow.js and the EMNIST dataset.
+image: /images/projects/alphabet-ai.png
+publishedAt: 2026-03-06
+tag: Machine Learning
+---
+
+## Live Application
+
+**Live Demo:**  
+https://alphabet-ai-mu.vercel.app/
+
+**GitHub Repository:**  
+https://github.com/Oghuz20/alphabet-ai
+
+## Overview
+
+The **Handwritten Alphabet Predictor** is a browser-based machine learning application that recognizes handwritten English letters.
+
+Users draw a character on a canvas and the system predicts the corresponding letter using a neural network trained on the **EMNIST ByClass dataset**.
+
+The entire model runs directly in the browser using **TensorFlow.js**, enabling real-time predictions without requiring a backend server.
+
+---
+
+## Key Features
+
+- Interactive canvas for drawing handwritten letters
+- Real-time AI-powered predictions
+- Case-insensitive recognition (handles uppercase and lowercase)
+- Top-3 prediction probabilities
+- Debug visualization of the 28×28 input image
+- Fully client-side inference using TensorFlow.js
+
+---
+
+## Technical Approach
+
+The model was trained on the **EMNIST ByClass dataset**, which contains both uppercase and lowercase handwritten characters.
+
+The dataset produces **52 classes (A–Z and a–z)**.
+
+To build a case-insensitive classifier, the application merges probabilities:
+
+
+P(letter) = P(uppercase) + P(lowercase)
+
+
+This results in **26 final output classes**.
+
+---
+
+## Preprocessing Pipeline
+
+User drawings from a browser canvas differ from EMNIST images, so several preprocessing steps are applied before inference:
+
+- Centering and resizing drawings to **28×28 pixels**
+- Grayscale conversion and pixel inversion
+- Binarization to remove noise
+- Center-of-mass alignment
+- Orientation correction to match EMNIST formatting
+
+These transformations ensure that user drawings match the training data distribution.
+
+---
+
+## Technology Stack
+
+- Next.js (App Router)
+- TypeScript
+- TensorFlow.js
+- HTML Canvas API
+- Vercel Deployment
+
+---
+
