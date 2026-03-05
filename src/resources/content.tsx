@@ -83,12 +83,13 @@ const home: Home = {
     </>
   ),
 };
-
+const locationLabel =
+  person.location === "Asia/Baku" ? "Baku, Azerbaijan" : person.location;
 const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from ${locationLabel}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -97,8 +98,8 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,

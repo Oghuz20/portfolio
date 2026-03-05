@@ -17,6 +17,9 @@ import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
+const locationLabel =
+  person.location === "Asia/Baku" ? "Baku, Azerbaijan" : person.location;
+
 export async function generateMetadata() {
   return Meta.generate({
     title: about.title,
@@ -96,7 +99,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              {locationLabel}
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">

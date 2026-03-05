@@ -13,7 +13,8 @@ type TimeDisplayProps = {
   timeZone: string;
   locale?: string; // Optionally allow locale, defaulting to 'en-GB'
 };
-
+const locationLabel =
+  person.location === "Asia/Baku" ? "Baku, Azerbaijan" : person.location;
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
   const [currentTime, setCurrentTime] = useState("");
 
@@ -73,7 +74,7 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
+          {display.location && <Row s={{ hide: true }}>{locationLabel}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
           <Row

@@ -6,7 +6,13 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
+    <Row
+      as="footer"
+      fillWidth
+      padding="8"
+      horizontal="center"
+      s={{ direction: "column" }}
+    >
       <Row
         className={styles.mobile}
         maxWidth="m"
@@ -22,30 +28,34 @@ export const Footer = () => {
         }}
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear} /</Text>
+          <Text onBackground="neutral-weak">© {currentYear}</Text>
           <Text paddingX="4">{person.name}</Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            / Build your portfolio with{" "}
-            <SmartLink href="https://asadov.site">Asadov.site</SmartLink>
-          </Text>
+          <Text onBackground="neutral-weak">• All rights reserved.</Text>
         </Text>
+
         <Row gap="16">
           {social.map(
             (item) =>
               item.link && (
-                <IconButton
+                <SmartLink
                   key={item.name}
                   href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
-              ),
+                  // only open a new tab for normal external links
+                  target={item.link.startsWith("http") ? "_blank" : undefined}
+                  rel={item.link.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  <IconButton
+                    icon={item.icon}
+                    tooltip={item.name}
+                    size="s"
+                    variant="ghost"
+                  />
+                </SmartLink>
+              )
           )}
         </Row>
       </Row>
+
       <Row height="80" hide s={{ hide: false }} />
     </Row>
   );
